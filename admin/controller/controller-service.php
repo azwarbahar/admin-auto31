@@ -26,7 +26,7 @@ if (isset($_POST['submit_tambah_service'])) {
     $status_service = "New";
 
     // TAMBAH DATA
-    $query = "INSERT INTO tb_service VALUES (NULL, NULL, '$nama', '$merek', '$model', '$tahun', '$nomor', '$kontak', '$alamat', NULL, NULL, '$masalah', '$jenis', NULL, NULL, '$status_bayar', '$status_service', NULL,  NULL);";
+    $query = "INSERT INTO tb_service VALUES (NULL, NULL, '$nama', '$merek', '$model', '$tahun', '$nomor', '$kontak', '$alamat', NULL, NULL, '$masalah', '$jenis', NULL, NULL, NULL, '$status_bayar', '$status_service', NULL,  NULL);";
     // mysqli_query($conn, $query);
     if (mysqli_query($conn, $query)) {
         plugins(); ?>

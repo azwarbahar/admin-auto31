@@ -66,6 +66,8 @@ $service = mysqli_query($conn, "SELECT * FROM tb_service ORDER BY id DESC");
                                             echo "<td style='text-align: center;'><span class='label label-default'> New </span></td>";
                                         } else if ($dta['status_service'] == "Proccess") {
                                             echo "<td style='text-align: center;'><span class='label label-inverse'> Proccess </span></td>";
+                                        } else if ($dta['status_service'] == "Cancel") {
+                                            echo "<td style='text-align: center;'><span class='label label-danger'> Cancel </span></td>";
                                         } else {
                                             echo "<td style='text-align: center;'><span class='label label-success'> Done </span></td>";
                                         }
@@ -111,18 +113,29 @@ $service = mysqli_query($conn, "SELECT * FROM tb_service ORDER BY id DESC");
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
+                                                        <?php
+                                                        $result_pelanggan = mysqli_query($conn, "SELECT * FROM tb_pelanggan WHERE id = '$dta[pelanggan_id]'");
+                                                        $dta_pelanggan = mysqli_fetch_assoc($result_pelanggan);
+                                                        $foto = "";
+                                                        if ($dta['jenis'] == "Service Luar") {
+                                                            $foto = $dta_pelanggan['foto'];
+                                                        } else {
+                                                            $foto = "photo_default.png";
+                                                        }
+                                                        ?>
                                                         <div class="col-sm-2">
-                                                            <img src="./../assets/images/small/img1.jpg" alt="image" class="img-responsive img-circle thumb-lg">
-
+                                                            <img src="../assets/images/photo/<?= $foto ?>" alt="image" class="img-responsive img-circle thumb-lg">
                                                         </div>
                                                         <div class="col-sm-10">
+                                                            <h3><?= $dta['nama'] ?></h3>
+                                                            <p>Kontak : <?= $dta['kontak'] ?></p>
                                                             <?php
-                                                            $result_pelanggan = mysqli_query($conn, "SELECT * FROM tb_pelanggan WHERE id = '$dta[pelanggan_id]'");
-                                                            $dta_pelanggan = mysqli_fetch_assoc($result_pelanggan);
+                                                            if ($dta['jenis'] == "Service Luar") {
+                                                                echo "<p>Lokasi :  $dta[alamat] </p>";
+                                                            } else {
+                                                                echo "<p>Alamat : $dta[alamat]</p>";
+                                                            }
                                                             ?>
-                                                            <h3><?= $dta_pelanggan['nama'] ?></h3>
-                                                            <p>Kontak : <?= $dta_pelanggan['kontak'] ?></p>
-                                                            <p>Alamat : <?= $dta_pelanggan['alamat'] ?></p>
                                                         </div>
                                                     </div>
                                                     <hr>
