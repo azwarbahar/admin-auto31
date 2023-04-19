@@ -7,7 +7,7 @@ $id = $_POST['id'];
 $key = $_POST['key'];
 $value = $_POST['value'];
 
-$query = "UPDATE tb_karyawan SET $key = '$value',
+$query = "UPDATE tb_pelanggan SET $key = '$value',
                                 updated_at = NULL WHERE id = '$id'";
 
 if (mysqli_query($conn, $query)) {

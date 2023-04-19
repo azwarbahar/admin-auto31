@@ -1,10 +1,10 @@
 <?php
 require_once '../koneksi.php';
 header('Content-type: application/json');
-$username = $_GET["username"];
+$email = $_GET["email"];
 $password = $_GET["password"];
 $ray = array();
-$query_user = "SELECT * FROM tb_karyawan WHERE username = '$username'";
+$query_user = "SELECT * FROM tb_pelanggan WHERE email = '$email'";
 $sql_user = mysqli_query($conn, $query_user);
 $row_pass_user = mysqli_fetch_assoc($sql_user);
 if ($row_pass_user) {
@@ -16,5 +16,5 @@ if ($row_pass_user) {
         echo json_encode(array("kode" => "2", "pesan" => "Password tidak sesuai"));
     }
 } else {
-    echo json_encode(array("kode" => "0", "pesan" => "Tidak Menemukan Pengguna"));
+    echo json_encode(array("kode" => "0", "pesan" => "Email Tidak Terdaftar"));
 }

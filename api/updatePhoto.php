@@ -11,7 +11,7 @@ $ext = pathinfo($foto, PATHINFO_EXTENSION);
 $nama_foto = "image_" . time() . "." . $ext;
 $file_tmp = $_FILES['foto']['tmp_name'];
 
-$query = "UPDATE tb_karyawan SET foto = '$nama_foto',
+$query = "UPDATE tb_pelanggan SET foto = '$nama_foto',
                                 updated_at = NULL WHERE id = '$id'";
 
 

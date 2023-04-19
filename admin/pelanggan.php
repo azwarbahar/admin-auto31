@@ -47,7 +47,7 @@ $pelanggan = mysqli_query($conn, "SELECT * FROM tb_pelanggan ORDER BY id DESC");
                                             <th>Foto</th>
                                             <th data-priority="1">Nama</th>
                                             <th data-priority="1">Kontak</th>
-                                            <th data-priority="1">Kendaraan</th>
+                                            <!-- <th data-priority="1">Kendaraan</th> -->
                                             <th data-priority="1">Merek</th>
                                             <th data-priority="1">No Plat</th>
                                             <th data-priority="1">Status</th>
@@ -66,9 +66,9 @@ $pelanggan = mysqli_query($conn, "SELECT * FROM tb_pelanggan ORDER BY id DESC");
                                                 </td>
                                                 <th><?= $dta['nama'] ?></th>
                                                 <td><?= $dta['kontak'] ?></td>
-                                                <td>
-                                                    <a href="../assets/images/photo/<?= $dta['foto_kendaraan'] ?>" target="_blank"> <img src="../assets/images/photo/<?= $dta['foto_kendaraan'] ?>" alt="image" class="thumb-sm "></a>
-                                                </td>
+                                                <!-- <td>
+                                                    <a href="../assets/images/photo/" target="_blank"> <img src="../assets/images/photo/" alt="image" class="thumb-sm "></a>
+                                                </td> -->
                                                 <?php
                                                 $Merek = $dta['merek_kendaraan'] . " - " . $dta['model_kendaraan'] . " (" . $dta['tahun_kendaraan'] . ")";
                                                 ?>

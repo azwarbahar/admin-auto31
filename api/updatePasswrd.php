@@ -7,12 +7,12 @@ $id = $_GET["id"];
 $password_lama = $_GET["password_lama"];
 $password_baru = $_GET["password_baru"];
 
-$getSales = mysqli_query($conn, "SELECT * FROM tb_karyawan WHERE id = '$id'");
+$getSales = mysqli_query($conn, "SELECT * FROM tb_pelanggan WHERE id = '$id'");
 $data = mysqli_fetch_assoc($getSales);
 
 if (password_verify($password_lama, $data["password"])) {
     $password = password_hash($password_baru, PASSWORD_DEFAULT);
-    $query =  mysqli_query($conn, "UPDATE tb_karyawan SET password = '$password' WHERE id = '$id'");
+    $query =  mysqli_query($conn, "UPDATE tb_pelanggan SET password = '$password' WHERE id = '$id'");
     if ($query) {
         echo json_encode(array("kode" => "1", "pesan" => "Berhasil Mengubah Password"));
     } else {
