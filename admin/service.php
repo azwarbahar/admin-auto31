@@ -186,6 +186,18 @@ $service = mysqli_query($conn, "SELECT * FROM tb_service ORDER BY id DESC");
                                                             }
                                                             ?>
                                                             <p><b style="color: white;">Biaya :</b> <a href="#">Rp. <?= $biaya ?></a></p>
+                                                            <br>
+                                                            <?php
+                                                            if ($dta['bukti_pembayaran'] != null) {
+                                                            ?>
+                                                                <h5>Bukti Pembayaran</h5>
+
+                                                                <div class="col-sm-12">
+                                                                    <a href="../assets/images/photo/<?= $dta['bukti_pembayaran'] ?>" target="_blank"> <img src="../assets/images/photo/<?= $dta['bukti_pembayaran'] ?>" alt="image" class="img-responsive img-thumbnail thumb-lg"></a>
+                                                                </div>
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
