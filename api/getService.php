@@ -3,7 +3,7 @@ require_once '../koneksi.php';
 header('Content-type: application/json');
 // error_reporting(E_ERROR | E_PARSE);
 
-$query = "SELECT * FROM tb_service ORDER BY id DESC";
+$query = "SELECT * FROM tb_service WHERE jenis='Service Luar' ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
 
 $array = array();
