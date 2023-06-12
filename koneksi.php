@@ -1,8 +1,7 @@
 <?php
 date_default_timezone_set("Asia/Makassar");
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "auto31_db");
-// $conn = mysqli_connect("localhost", "u3737783_uinamfind", "uinamfind", "u3737783_uinamfind_db");
+$conn = mysqli_connect("localhost", "u319221554_auto31bengkel", "Auto31bengkel", "u319221554_auto31bengkel");
 
 
 function slugify($text, string $divider = '-')
