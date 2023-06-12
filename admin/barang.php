@@ -77,6 +77,7 @@ $barang = mysqli_query($conn, "SELECT * FROM tb_barang ORDER BY id DESC");
                                                         <option value='Biji'>Biji</option>
                                                         <option value='Box'>Box</option>
                                                         <option value='Unit'>Unit</option>
+                                                        <option value='Liter'>Liter</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -172,6 +173,7 @@ $barang = mysqli_query($conn, "SELECT * FROM tb_barang ORDER BY id DESC");
                                                                     <option value='Biji'>Biji</option>
                                                                     <option value='Box'>Box</option>
                                                                     <option value='Unit'>Unit</option>
+                                                                    <option value='Liter'>Liter</option>
                                                                 </select>
                                                             </div>
                                                         </div>
