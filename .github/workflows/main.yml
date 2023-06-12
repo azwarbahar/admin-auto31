@@ -1,1 +1,16 @@
-
+on:
+  push:
+    branches: [master]
+name: Deploy To Server
+jobs:
+  web-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Latest code
+        uses: actions/checkout@v2
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.cfg.my.id
+          username: u319221554.auto31bengkel
+          password: Auto31bengkel
